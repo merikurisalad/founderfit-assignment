@@ -115,6 +115,34 @@ body {
   flex: 1;
 }
 
+/* ── Search Bar ──────────────────────────────── */
+
+.search-bar {
+  margin-bottom: 0.75rem;
+}
+
+.search-input {
+  width: 100%;
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  background: var(--color-surface);
+  font-size: 0.925rem;
+  color: var(--color-text);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.search-input::placeholder {
+  color: var(--color-text-secondary);
+  opacity: 0.6;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px var(--color-accent-light);
+}
+
 /* ── Filter Bar ──────────────────────────────── */
 
 .filter-bar {

@@ -50,6 +50,7 @@ function sortResources(list, sortKey) {
 
 function App() {
   const [activeTab, setActiveTab] = useState("library");
+  const [search, setSearch] = useState("");
   const [sortBy, setSortBy] = useState("default");
   const [filters, setFilters] = useState({
     type: "all",
@@ -59,7 +60,12 @@ function App() {
   });
 
   const filtered = useMemo(() => {
+    const q = search.toLowerCase().trim();
     const result = resources.filter((r) => {
+      if (q) {
+        const haystack = `${r.title} ${r.source} ${r.type} ${r.keyTakeaway} ${r.recommendedFor}`.toLowerCase();
+        if (!haystack.includes(q)) return false;
+      }
       if (filters.type !== "all" && r.type !== filters.type) return false;
       if (filters.level !== "all" && r.recommendedFor !== filters.level)
         return false;
@@ -70,7 +76,7 @@ function App() {
       return true;
     });
     return sortResources(result, sortBy);
-  }, [filters, sortBy]);
+  }, [filters, sortBy, search]);
 
   return (
     <div className="app">
@@ -97,6 +103,15 @@ function App() {
 
       {activeTab === "library" ? (
         <main className="main-content">
+          <div className="search-bar">
+            <input
+              type="text"
+              placeholder="Search resources..."
+              value={search}
+              onChange={(e) => setSearch(e.target.value)}
+              className="search-input"
+            />
+          </div>
           <FilterBar
             filters={filters}
             setFilters={setFilters}
