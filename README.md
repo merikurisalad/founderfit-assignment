@@ -1,5 +1,7 @@
 # FounderFit Resource Library
 
+**[Deliverables Document](https://docs.google.com/document/d/1__hpjKiPbiEytNrOnHT9O-1JqOzKdGQ3PJtNhqTlsAs/edit?usp=sharing)**
+
 A curated resource library for first-time founders building direct-to-consumer sustainable fashion brands on a small budget. Built with React + Vite.
 
 ## Features
