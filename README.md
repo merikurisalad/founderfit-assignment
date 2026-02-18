@@ -6,6 +6,8 @@
 
 A curated resource library for first-time founders building direct-to-consumer sustainable fashion brands on a small budget. Built with React + Vite.
 
+![FounderFit Resource Library](screenshot.png)
+
 ## Features
 
 - **24 curated resources** — articles, guides, case studies, videos, podcasts, tools, and more
