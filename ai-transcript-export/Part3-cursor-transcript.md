@@ -1,5 +1,5 @@
 # Resource library web page design
-_Exported on 2/17/2026 at 20:40:21 PST from Cursor (2.4.35)_
+_Exported on 2/17/2026 at 21:55:44 PST from Cursor (2.4.35)_
 
 ---
 
@@ -251,4 +251,46 @@ Done. The README at `resource-library/README.md` covers:
 - **All available scripts** (dev, build, preview, lint)
 - **How to add/edit resources** with the data schema so anyone can extend the library
 - **Tech stack** summary
+
+---
+
+**User**
+
+is it hard to add a search functionality in the library?
+
+---
+
+**Cursor**
+
+Not at all — it's just a text input and a filter on the existing data. I can wire it into the current `useMemo` pipeline so it searches across title, source, key takeaway, and type all at once. Want me to add it?
+
+---
+
+**User**
+
+Yes
+
+---
+
+**Cursor**
+
+Now add the search input above the filter bar.
+
+Now add the CSS for the search bar.
+
+Done. There's now a search input at the top of the card view that filters in real time across title, source, type, key takeaway, and difficulty level. It works together with the existing filters and sort — so you can search "deadstock" and still filter by type or rating on top of that. Should be live already.
+
+---
+
+**User**
+
+is it better to add a search button?
+
+---
+
+**Cursor**
+
+For a small dataset like this (24 resources), real-time search as you type is actually the better UX — results update instantly so there's no extra click, and it feels snappier. A search button makes more sense when you're hitting an API or searching a large database where each query has a cost.
+
+I'd keep it as-is. But if you'd prefer a button anyway (say, for visual clarity), I can add one — just let me know.
 
